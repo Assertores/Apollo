@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
-	public abstract class GameEvent : ScriptableObject
+	public abstract class GameEvent : ScriptableObject, IInputSubscription
 	{
 		[SerializeField] AstronautInput mySuccess;
 		[SerializeField] AstronautInput myFailiar;
@@ -15,6 +15,8 @@ namespace Apollo
 		public void OnInstanciation() {
 			mySuccess.OnStartWait();
 			myFailiar.OnStartWait();
+
+			AstronautInputBus.s_instance.AddSubscription(this);
 			OnStart();
 		}
 
@@ -29,8 +31,10 @@ namespace Apollo
 			}
 			return;
 onFinish:
+			AstronautInputBus.s_instance.RemoveSubscription(this);
 			mySuccess.OnStopWait();
 			myFailiar.OnStopWait();
+			Destroy(this);
 		}
 	}
 }
