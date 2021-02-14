@@ -104,6 +104,24 @@ namespace Apollo
 		void Start() {
 			myServerThread = new Thread(ServerThread);
 			myServerThread.Start();
+			StartCoroutine(Dummy());
+		}
+
+		IEnumerator Dummy() {
+			while(true) {
+				yield return new WaitForSeconds(30);
+
+				var terinals = new Dictionary<Terminals, List<HttpListenerResponse>>();
+				foreach(var it in myTerminalRequests) {
+					terinals.Add(it.Key, it.Value);
+				}
+				myTerminalRequests.Clear();
+				foreach(var it in terinals) {
+					foreach(var jt in it.Value) {
+						SendUpdate(it.Key, jt);
+					}
+				}
+			}
 		}
 
 		private void OnDestroy() {
@@ -156,6 +174,7 @@ namespace Apollo
 
 		void SendFile(string aFilename, HttpListenerResponse aResponse) {
 			aResponse.StatusCode = (int)HttpStatusCode.OK;
+			aFilename = Application.streamingAssetsPath + aFilename;
 
 			try {
 				
@@ -187,7 +206,7 @@ namespace Apollo
 
 		void SendUpdate(Terminals aTerminal, HttpListenerResponse aResponse) {
 			// TODO: return dynamic generated html file
-			SendFile(Application.streamingAssetsPath + FromTerminal(aTerminal), aResponse);
+			SendFile(FromTerminal(aTerminal), aResponse);
 		}
 
 		string FromTerminal(Terminals aTerminal) {
