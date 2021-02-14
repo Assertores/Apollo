@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Apollo {
+namespace Apollo
+{
+	[CreateAssetMenu(fileName = "DataConstraintBranchComposit", menuName = "Game/DataConstraintBranchComposit")]
 	public class DataConstraintBranchComposit : DataConstraint
 	{
 		[SerializeField] DataConstraint[] myBranches;

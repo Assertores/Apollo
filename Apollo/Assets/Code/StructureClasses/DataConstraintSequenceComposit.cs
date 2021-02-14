@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
+	[CreateAssetMenu(fileName = "DataConstraintSequenceComposit", menuName = "Game/DataConstraintSequenceComposit")]
 	public class DataConstraintSequenceComposit : DataConstraint
 	{
 		[SerializeField] DataConstraint[] mySequence;
