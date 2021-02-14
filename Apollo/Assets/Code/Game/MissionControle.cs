@@ -6,6 +6,8 @@ using System.Net.Sockets;
 using System.Threading;
 using System.IO;
 using System;
+using AsserTOOLres;
+using System.Text;
 
 namespace Apollo
 {
@@ -14,7 +16,7 @@ namespace Apollo
 		MissionDirector,
 		CapCom,
 	}
-	public class MissionControle : MonoBehaviour
+	public class MissionControle : Singleton<MissionControle>
 	{
 		static readonly string LOCALHOST = "http://localhost:";
 		static readonly string TERMINATE = "terminate";
@@ -91,10 +93,11 @@ namespace Apollo
 
 		[SerializeField] int myPort;
 		[System.Serializable]
-		struct TerminalDcitEntry
+		class TerminalDcitEntry
 		{
 			public Terminals myKey;
 			public string myFile;
+			[HideInInspector] public TerminalBuilder myBuilder;
 		}
 		[SerializeField] List<TerminalDcitEntry> myTerminals;
 
@@ -104,23 +107,9 @@ namespace Apollo
 		void Start() {
 			myServerThread = new Thread(ServerThread);
 			myServerThread.Start();
-			StartCoroutine(Dummy());
-		}
-
-		IEnumerator Dummy() {
-			while(true) {
-				yield return new WaitForSeconds(30);
-
-				var terinals = new Dictionary<Terminals, List<HttpListenerResponse>>();
-				foreach(var it in myTerminalRequests) {
-					terinals.Add(it.Key, it.Value);
-				}
-				myTerminalRequests.Clear();
-				foreach(var it in terinals) {
-					foreach(var jt in it.Value) {
-						SendUpdate(it.Key, jt);
-					}
-				}
+			foreach(var it in myTerminals) {
+				it.myBuilder = new DummyTerminalBuilder();
+				it.myBuilder.Init(this);
 			}
 		}
 
@@ -131,6 +120,22 @@ namespace Apollo
 			myServerThread?.Join();
 		}
 
+		public void SendAllUpdate(Terminals aTerminal) {
+			var terminals = new Dictionary<Terminals, List<HttpListenerResponse>>();
+			foreach (var it in myTerminalRequests) {
+				terminals[it.Key] = it.Value;
+			}
+			myTerminalRequests.Clear();
+
+			if(!terminals.ContainsKey(aTerminal)) {
+				return;
+			}
+			var content = FromTerminal(aTerminal);
+			foreach(var it in terminals[aTerminal]) {
+				SendUpdate(content, it);
+			}
+		}
+
 		void ServerThread() {
 			var listener = new HttpListener();
 			listener.Prefixes.Add("http://*:" + myPort + "/");
@@ -139,6 +144,7 @@ namespace Apollo
 
 			while(true) {
 				var context = listener.GetContext();
+				Debug.Log(context.Request.ToString());
 				if(context.Request.Headers.Get(TERMINATE) != null) {
 					context.Response.StatusCode = (int)HttpStatusCode.Continue;
 					context.Response.OutputStream.Flush();
@@ -161,7 +167,7 @@ namespace Apollo
 					continue;
 				}
 				if(context.Request.Headers.Get(UPDATE) == null) {
-					SendUpdate(terminal, context.Response);
+					SendUpdate(FromTerminal(terminal), context.Response);
 					continue;
 				}
 				if(!myTerminalRequests.ContainsKey(terminal)) {
@@ -177,10 +183,9 @@ namespace Apollo
 			aFilename = Application.streamingAssetsPath + aFilename;
 
 			try {
-				
+
 				Stream input = new FileStream(aFilename, FileMode.Open);
 
-				//Adding permanent http response headers
 				string mime;
 				aResponse.ContentType = myMimeTypeMappings.TryGetValue(Path.GetExtension(aFilename), out mime) ? mime : "application/octet-stream";
 				aResponse.ContentLength64 = input.Length;
@@ -192,9 +197,6 @@ namespace Apollo
 				while((nbytes = input.Read(buffer, 0, buffer.Length)) > 0)
 					aResponse.OutputStream.Write(buffer, 0, nbytes);
 				input.Close();
-
-
-				aResponse.OutputStream.Flush();
 			} catch(Exception ex) {
 				aResponse.StatusCode = (int)HttpStatusCode.InternalServerError;
 				print(ex);
@@ -204,15 +206,32 @@ namespace Apollo
 			aResponse.OutputStream.Close();
 		}
 
-		void SendUpdate(Terminals aTerminal, HttpListenerResponse aResponse) {
-			// TODO: return dynamic generated html file
-			SendFile(FromTerminal(aTerminal), aResponse);
+
+		void SendUpdate(string aHtml, HttpListenerResponse aResponse) {
+
+			aResponse.StatusCode = (int)HttpStatusCode.OK;
+
+			try {
+				aResponse.ContentType = "text/html";
+				aResponse.ContentLength64 = aHtml.Length;
+				aResponse.AddHeader("Date", DateTime.Now.ToString("r"));
+				aResponse.AddHeader("Last-Modified", System.DateTime.Today.ToString("r"));
+
+				byte[] buffer = UTF8Encoding.Default.GetBytes(aHtml);
+				aResponse.OutputStream.Write(buffer, 0, buffer.Length);
+			} catch(Exception ex) {
+				aResponse.StatusCode = (int)HttpStatusCode.InternalServerError;
+				print(ex);
+			}
+
+			aResponse.OutputStream.Flush();
+			aResponse.OutputStream.Close();
 		}
 
 		string FromTerminal(Terminals aTerminal) {
 			foreach(var it in myTerminals) {
 				if(it.myKey == aTerminal) {
-					return it.myFile;
+					return it.myBuilder.GetHtml();
 				}
 			}
 			Debug.LogWarning("no file for Terminal" + aTerminal.ToString());
