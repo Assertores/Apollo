@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myImage: {fileID: 1436520846}
-  myEvent: {fileID: 0}
+  myEvent: {fileID: 11400000, guid: 68cce030d561cb74e8911180f58fe2cf, type: 2}
 --- !u!1 &1436520844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,8 +1806,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPort: 2022
   myTerminals:
-  - myKey: 1
-    myFile: /CapCom.html
+  - myTerminal: 1
+    myFile: CapCom.html
 --- !u!114 &2090281445
 MonoBehaviour:
   m_ObjectHideFlags: 0

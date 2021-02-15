@@ -95,22 +95,29 @@ namespace Apollo
 		[System.Serializable]
 		class TerminalDictEntry
 		{
-			public Terminals myKey;
+			public Terminals myTerminal;
 			public string myFile;
-			[HideInInspector] public TerminalBuilder myBuilder;
 		}
 		[SerializeField] List<TerminalDictEntry> myTerminals;
+		Dictionary<string, Terminals> myFileToTerminals = new Dictionary<string, Terminals>();
+		Dictionary<Terminals, TerminalBuilder> myTerminalToBuilder = new Dictionary<Terminals, TerminalBuilder>();
 
 		Thread myServerThread = null;
 		Dictionary<Terminals, List<HttpListenerResponse>> myTerminalRequests = new Dictionary<Terminals, List<HttpListenerResponse>>();
 
 		void Start() {
+			foreach(var it in myTerminals) {
+				myFileToTerminals["/" + it.myFile] = it.myTerminal;
+			}
+			myTerminals = null;
+			myTerminalToBuilder[Terminals.CapCom] = new DummyTerminalBuilder();
+			myTerminalToBuilder[Terminals.MissionDirector] = new DummyTerminalBuilder();
+			foreach(var it in myTerminalToBuilder) {
+				it.Value.Init(this);
+			}
+
 			myServerThread = new Thread(ServerThread);
 			myServerThread.Start();
-			foreach(var it in myTerminals) {
-				it.myBuilder = new DummyTerminalBuilder();
-				it.myBuilder.Init(this);
-			}
 		}
 
 		private void OnDestroy() {
@@ -221,24 +228,16 @@ namespace Apollo
 		}
 
 		string FromTerminal(Terminals aTerminal) {
-			foreach(var it in myTerminals) {
-				if(it.myKey == aTerminal) {
-					return it.myBuilder.GetHtml();
-				}
-			}
-			Debug.LogWarning("no file for Terminal" + aTerminal.ToString());
-			return "";
+			return myTerminalToBuilder[aTerminal].GetHtml();
 		}
 
 		bool FromFileName(string aFile, out Terminals aTerminal) {
-			foreach(var it in myTerminals) {
-				if(it.myFile == aFile) {
-					aTerminal = it.myKey;
-					return true;
-				}
+			if(!myFileToTerminals.ContainsKey(aFile)) {
+				aTerminal = Terminals.CapCom;
+				return false;
 			}
-			aTerminal = Terminals.CapCom;
-			return false;
+			aTerminal = myFileToTerminals[aFile];
+			return true;
 		}
 	}
 }
