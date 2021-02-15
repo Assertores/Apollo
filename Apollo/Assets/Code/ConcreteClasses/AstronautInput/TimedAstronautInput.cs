@@ -9,12 +9,13 @@ namespace Apollo
 	{
 		[SerializeField] float myDelayInSeconds;
 		Coroutine myCoroutine = null;
+		AstronautInput myInstance = null;
 
 		protected void OnStart() { }
 		protected void OnEnd() { }
 
 		public override sealed bool Action(AstronautInput aInput) {
-			return aInput == this;
+			return aInput == myInstance;
 		}
 
 		public override sealed void OnStartWait() {
@@ -29,7 +30,8 @@ namespace Apollo
 
 		IEnumerator DelayRunInput(float aDelayInSeconds) {
 			yield return new WaitForSeconds(aDelayInSeconds);
-			AstronautInputBus.s_instance.RunInput(this);
+			myInstance = new TimedAstronautInput();
+			AstronautInputBus.s_instance.RunInput(myInstance);
 		}
 	}
 }

@@ -12,10 +12,10 @@ namespace Apollo
 		protected abstract bool AcceptInput(AstronautInput aInput);
 
 		public override bool Action(AstronautInput aInput) {
-			if(AcceptInput(aInput)) {
+			if(!AcceptInput(aInput)) {
 				return false;
 			}
-			if(!myConstraint.IsInConstraint()) {
+			if(!DataConstraint.IsInConstraint(myConstraint)) {
 				var concreteEvent = Instantiate(myFailerEvent);
 				concreteEvent.OnInstanciation();
 			}

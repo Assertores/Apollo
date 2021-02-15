@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c324db6208837a8478a7cd5f0c75ea82, type: 3}
+  m_Name: DummyEventBranch
+  m_EditorClassIdentifier: 
+  myBranches:
+  - {fileID: 11400000, guid: e0482a37a9738fc4487d28bba0e1cbf5, type: 2}
+  - {fileID: 11400000, guid: 12fc237550b30b4429bbf523af96c63c, type: 2}

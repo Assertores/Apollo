@@ -9,7 +9,7 @@ namespace Apollo
 		string myHtmlTemplate;
 
 		public override sealed string GetHtml() {
-			return string.Format(myHtmlTemplate, GameState.s_instance.values[(int)ValueTypes.Altitude], GameState.s_instance.buttons[(int)ButtonTypes.COM]);
+			return string.Format(myHtmlTemplate, GameState.s_instance.values[(int)ValueTypes.Altitude].value, GameState.s_instance.buttons[(int)ButtonTypes.COM].value);
 		}
 
 		protected override sealed void OnInit() {

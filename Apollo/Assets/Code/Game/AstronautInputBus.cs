@@ -7,20 +7,18 @@ namespace Apollo
 {
 	public class AstronautInputBus : Singleton<AstronautInputBus>
 	{
-		List<IInputSubscription> mySubscriptions;
+		System.Action<AstronautInput> mySubscriptions;
 
 		public void AddSubscription(IInputSubscription aSub) {
-			mySubscriptions.Add(aSub);
+			mySubscriptions += aSub.OnNewInput;
 		}
 
 		public void RemoveSubscription(IInputSubscription aSub) {
-			mySubscriptions.Remove(aSub);
+			mySubscriptions -= aSub.OnNewInput;
 		}
 
 		public void RunInput(AstronautInput aInput) {
-			foreach(var it in mySubscriptions) {
-				it.OnNewInput(aInput);
-			}
+			mySubscriptions?.Invoke(aInput);
 		}
 	}
 }

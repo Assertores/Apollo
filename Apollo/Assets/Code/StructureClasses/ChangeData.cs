@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
+	[CreateAssetMenu(fileName = "ChangeData", menuName = "Game/ChangeData")]
 	public class ChangeData : ScriptableObject, IInputSubscription
 	{
 		[SerializeField] AstronautInput myInput;
