@@ -1,0 +1,11 @@
+body {
+    background-image: url(../res/screen.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.content {
+    padding: 13vh 9.5%;
+    color: white;
+}
