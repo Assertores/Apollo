@@ -121,17 +121,15 @@ namespace Apollo
 		}
 
 		public void SendAllUpdate(Terminals aTerminal) {
-			var terminals = new Dictionary<Terminals, List<HttpListenerResponse>>();
-			foreach (var it in myTerminalRequests) {
-				terminals[it.Key] = it.Value;
-			}
-			myTerminalRequests.Clear();
-
-			if(!terminals.ContainsKey(aTerminal)) {
+			if(!myTerminalRequests.ContainsKey(aTerminal)) {
 				return;
 			}
+			var terminals = myTerminalRequests[aTerminal];
+			myTerminalRequests.Remove(aTerminal);
+
+			
 			var content = FromTerminal(aTerminal);
-			foreach(var it in terminals[aTerminal]) {
+			foreach(var it in terminals) {
 				SendUpdate(content, it);
 			}
 		}
@@ -144,7 +142,7 @@ namespace Apollo
 
 			while(true) {
 				var context = listener.GetContext();
-				Debug.Log(context.Request.ToString());
+				
 				if(context.Request.Headers.Get(TERMINATE) != null) {
 					context.Response.StatusCode = (int)HttpStatusCode.Continue;
 					context.Response.OutputStream.Flush();
@@ -152,24 +150,18 @@ namespace Apollo
 					break;
 				}
 
-				if(!context.Request.Url.LocalPath.EndsWith(".html")) {
-					SendFile(context.Request.Url.LocalPath, context.Response);
-					continue;
-				}
-
 				Terminals terminal;
 				var exisits = FromFileName(context.Request.Url.LocalPath, out terminal);
 
 				if(!exisits) {
-					context.Response.StatusCode = (int)HttpStatusCode.NotFound;
-					context.Response.OutputStream.Flush();
-					context.Response.OutputStream.Close();
+					SendFile(context.Request.Url.LocalPath, context.Response);
 					continue;
 				}
 				if(context.Request.Headers.Get(UPDATE) == null) {
 					SendUpdate(FromTerminal(terminal), context.Response);
 					continue;
 				}
+
 				if(!myTerminalRequests.ContainsKey(terminal)) {
 					myTerminalRequests[terminal] = new List<HttpListenerResponse>();
 				}
