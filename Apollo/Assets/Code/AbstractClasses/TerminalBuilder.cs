@@ -6,13 +6,13 @@ namespace Apollo
 {
 	public abstract class TerminalBuilder
 	{
-		protected MissionControle myMissionControle;
+		protected MissionControl myMissionControl;
 
 		protected abstract void OnInit();
 		public abstract string GetHtml();
 
-		public void Init(MissionControle aMissionControle) {
-			myMissionControle = aMissionControle;
+		public void Init(MissionControl aMissionControl) {
+			myMissionControl = aMissionControl;
 			OnInit();
 		}
 

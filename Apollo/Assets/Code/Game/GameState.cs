@@ -30,7 +30,7 @@ namespace Apollo
 	public enum ValueTypes
 	{
 		Altitude = 0,
-		Fule,
+		Fuel,
 
 		Size
 	}

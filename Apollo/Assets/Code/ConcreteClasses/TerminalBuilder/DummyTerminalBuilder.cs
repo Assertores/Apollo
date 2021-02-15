@@ -21,7 +21,7 @@ namespace Apollo
 			while(true) {
 				yield return new WaitForSeconds(30);
 
-				myMissionControle.SendAllUpdate(Terminals.CapCom);
+				myMissionControl.SendAllUpdate(Terminals.CapCom);
 			}
 		}
 	}

@@ -16,7 +16,7 @@ namespace Apollo
 		MissionDirector,
 		CapCom,
 	}
-	public class MissionControle : Singleton<MissionControle>
+	public class MissionControl : Singleton<MissionControl>
 	{
 		static readonly string LOCALHOST = "http://localhost:";
 		static readonly string TERMINATE = "terminate";
@@ -93,13 +93,13 @@ namespace Apollo
 
 		[SerializeField] int myPort;
 		[System.Serializable]
-		class TerminalDcitEntry
+		class TerminalDictEntry
 		{
 			public Terminals myKey;
 			public string myFile;
 			[HideInInspector] public TerminalBuilder myBuilder;
 		}
-		[SerializeField] List<TerminalDcitEntry> myTerminals;
+		[SerializeField] List<TerminalDictEntry> myTerminals;
 
 		Thread myServerThread = null;
 		Dictionary<Terminals, List<HttpListenerResponse>> myTerminalRequests = new Dictionary<Terminals, List<HttpListenerResponse>>();
