@@ -6,23 +6,20 @@ namespace Apollo
 {
 	public class DummyTerminalBuilder : TerminalBuilder
 	{
-		int myCounter = 23;
+		string myHtmlTemplate;
 
 		public override sealed string GetHtml() {
-			myCounter++;
-			return GetStaticBeginning("Dummy") + "test Nr. " + myCounter + GetStaticEnd();
+			return string.Format(myHtmlTemplate, GameState.s_instance.values[(int)ValueTypes.Altitude], GameState.s_instance.buttons[(int)ButtonTypes.COM]);
 		}
 
 		protected override sealed void OnInit() {
-			CorountineHolder.s_instance.StartCoroutine(Dummy());
+			myHtmlTemplate = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/CapCom.html");
+			GameState.s_instance.values[(int)ValueTypes.Altitude].OnValueChange += Update;
+			GameState.s_instance.buttons[(int)ButtonTypes.COM].OnValueChange += Update;
 		}
 
-		IEnumerator Dummy() {
-			while(true) {
-				yield return new WaitForSeconds(30);
-
-				myMissionControl.SendAllUpdate(Terminals.CapCom);
-			}
+		void Update() {
+			myMissionControl.SendAllUpdate(Terminals.CapCom);
 		}
 	}
 }
