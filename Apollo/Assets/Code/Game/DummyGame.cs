@@ -12,7 +12,7 @@ namespace Apollo
 
 		void Start() {
 			myImage.gameObject.SetActive(false);
-			GameState.s_instance.values[(int)ValueTypes.Altitude].value = Random.Range(0.0f, 100.0f);
+			GameState.s_instance.myValues[(int)ValueType.Altitude].value = Random.Range(0.0f, 100.0f);
 			StartCoroutine(Trigger(Random.Range(10.0f, 40.0f)));
 		}
 

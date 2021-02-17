@@ -4,16 +4,14 @@ using UnityEngine;
 
 namespace Apollo
 {
-	[CreateAssetMenu(fileName = "ButtonAstronautInput", menuName = "Game/AstronautInput/Button")]
+	[CreateAssetMenu(fileName = "AstronautInput_Button", menuName = "Game/AstronautInput/Button")]
 	public class ButtonAstronautInput : AstronautInputTemplateMethod
 	{
-		[SerializeField] ButtonTypes myType;
+		[SerializeField] ButtonType myType;
 		[SerializeField] ButtonState myState;
 
-		public override void OnStartWait() {
-		}
-
-		public override void OnStopWait() {
+		public override void UpdateData() {
+			GameState.s_instance.myButtons[(int)myType].value = myState;
 		}
 
 		protected override bool AcceptInput(AstronautInput aInput) {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
-	[CreateAssetMenu(fileName = "ConstAstronautInput", menuName = "Game/AstronautInput/Const")]
+	[CreateAssetMenu(fileName = "AstronautInput_Const", menuName = "Game/AstronautInput/Const")]
 	public class ConstAstronautInput : AstronautInput
 	{
 		[SerializeField] bool myFixture;
@@ -17,6 +17,9 @@ namespace Apollo
 		}
 
 		public override void OnStopWait() {
+		}
+
+		public override void UpdateData() {
 		}
 	}
 }

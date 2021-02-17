@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AsserTOOLres;
 
 namespace Apollo
 {
-	public class RegisterChangeData : MonoBehaviour
+	public class RegisterChangeData : Singleton<RegisterChangeData>
 	{
 		[SerializeField] ChangeData[] myChangeDatas;
 		
@@ -19,6 +20,12 @@ namespace Apollo
 				foreach(var it in myChangeDatas) {
 					AstronautInputBus.s_instance.AddSubscription(it);
 				}
+			}
+		}
+
+		public void ResetAll() {
+			foreach(var it in myChangeDatas) {
+				it.Stop();
 			}
 		}
 	}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4d38fabea0b50c43abc9aab552d8433, type: 3}
-  m_Name: DoComPress
+  m_Name: DoComRelease
   m_EditorClassIdentifier: 
-  myInput: {fileID: 11400000, guid: 62839ca1ef96f19448b4f4af1fb9b7e8, type: 2}
-  myStrategy: {fileID: 11400000, guid: 2e9dad405809f2042a07b05645e4e252, type: 2}
+  myInput: {fileID: 11400000, guid: cd73cd044548cac4ea636c50ee17cc7e, type: 2}
+  myStrategy: {fileID: 0}

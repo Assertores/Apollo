@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Apollo
 {
-	[CreateAssetMenu(fileName = "ValueBelowEdgeDataConstraint", menuName = "Game/DataConstraint/ValueBelowEdge")]
+	[CreateAssetMenu(fileName = "DataConstraint_BelowEdge_Value", menuName = "Game/DataConstraint/ValueBelowEdge")]
 	public class ValueBelowEdgeDataConstraint : DataConstraint
 	{
-		[SerializeField] ValueTypes myType;
+		[SerializeField] ValueType myType;
 		[SerializeField] float myEdge;
 
 		public override bool IsInConstraint() {
-			return GameState.s_instance.values[(int)myType].value <= myEdge;
+			return GameState.s_instance.myValues[(int)myType].value <= myEdge;
 		}
 	}
 }

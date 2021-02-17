@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
-	[CreateAssetMenu(fileName = "TimedAstronautInput", menuName = "Game/AstronautInput/Timed")]
+	[CreateAssetMenu(fileName = "AstronautInput_Timed", menuName = "Game/AstronautInput/Timed")]
 	public class TimedAstronautInput : AstronautInput
 	{
 		[SerializeField] float myDelayInSeconds;
@@ -32,6 +32,9 @@ namespace Apollo
 			yield return new WaitForSeconds(aDelayInSeconds);
 			myInstance = new TimedAstronautInput();
 			AstronautInputBus.s_instance.RunInput(myInstance);
+		}
+
+		public override void UpdateData() {
 		}
 	}
 }

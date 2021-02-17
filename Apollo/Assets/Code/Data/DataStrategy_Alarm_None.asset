@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de37d7ea0b5f011439a39c994b468a67, type: 3}
-  m_Name: OnConstFalse
+  m_Script: {fileID: 11500000, guid: 419a78bb2a981a0449f37ea9b7b1971a, type: 3}
+  m_Name: DataStrategy_Alarm_None
   m_EditorClassIdentifier: 
-  myConstraint: {fileID: 0}
-  myFailerEvent: {fileID: 0}
-  myFixture: 0
+  myNewState: 0

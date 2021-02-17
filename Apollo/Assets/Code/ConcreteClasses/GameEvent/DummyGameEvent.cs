@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
-	[CreateAssetMenu(fileName = "DummyGameEvent", menuName = "Game/GameEvent/Dummy")]
+	[CreateAssetMenu(fileName = "GameEvent_Dummy", menuName = "Game/GameEvent/Dummy")]
 	public class DummyGameEvent : GameEvent
 	{
 		protected override void OnFinished(bool aSuccessfull) {

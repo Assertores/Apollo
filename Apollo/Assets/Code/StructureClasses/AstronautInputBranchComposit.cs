@@ -29,5 +29,8 @@ namespace Apollo
 				it.OnStopWait();
 			}
 		}
+
+		public override void UpdateData() {
+		}
 	}
 }

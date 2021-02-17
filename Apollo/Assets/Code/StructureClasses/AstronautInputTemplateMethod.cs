@@ -9,6 +9,12 @@ namespace Apollo
 		[SerializeField] DataConstraint myConstraint;
 		[SerializeField] GameEvent myFailerEvent;
 
+		public override void OnStartWait() {
+		}
+
+		public override void OnStopWait() {
+		}
+
 		protected abstract bool AcceptInput(AstronautInput aInput);
 
 		public override bool Action(AstronautInput aInput) {

@@ -18,6 +18,7 @@ namespace Apollo
 		}
 
 		public void RunInput(AstronautInput aInput) {
+			aInput.UpdateData();
 			mySubscriptions?.Invoke(aInput);
 		}
 	}

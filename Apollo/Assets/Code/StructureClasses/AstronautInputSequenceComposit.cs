@@ -28,7 +28,11 @@ namespace Apollo
 		}
 
 		public override void OnStopWait() {
+			myCurrentIndex = 0;
 			mySequence[myCurrentIndex].OnStopWait();
+		}
+
+		public override void UpdateData() {
 		}
 	}
 }

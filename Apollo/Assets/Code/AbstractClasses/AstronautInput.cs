@@ -8,6 +8,7 @@ namespace Apollo
 	{
 		public abstract void OnStartWait();
 		public abstract void OnStopWait();
+		public abstract void UpdateData();
 		public abstract bool Action(AstronautInput aInput);
 	}
 }
