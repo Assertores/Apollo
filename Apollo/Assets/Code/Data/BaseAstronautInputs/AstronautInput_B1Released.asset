@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e643f83acc909b94db37a43305a9028f, type: 3}
+  m_Name: AstronautInput_B1Released
+  m_EditorClassIdentifier: 
+  myConstraint: {fileID: 0}
+  myFailerEvent: {fileID: 0}
+  myType: 0
+  myState: 0
