@@ -7,10 +7,12 @@ namespace Apollo
 {
 	public enum ButtonType
 	{
-		SAS = 0,
-		Radar,
-		COM,
-		Electric,
+		B1,
+		B2,
+		B3,
+		B4,
+		B5,
+		B6,
 		
 		Size
 	}
@@ -21,9 +23,12 @@ namespace Apollo
 	}
 	public enum IndecatorType
 	{
-		DynamicPressure = 0,
-		Oxygene,
-		Heat,
+		I1,
+		I2,
+		I3,
+		I4,
+		I5,
+		I6,
 
 		Size
 	}
@@ -45,15 +50,23 @@ namespace Apollo
 	}
 	public enum ValueType
 	{
-		Altitude = 0,
-		Fuel,
+		V1,
+		V2,
+		V3,
+		V4,
+		V5,
+		V6,
 
 		Size
 	}
 	public enum RotatorTypes
 	{
-		Stage = 0,
-		ElectricMode,
+		R1,
+		R2,
+		R3,
+		R4,
+		R5,
+		R6,
 
 		Size
 	}

@@ -13,8 +13,12 @@ namespace Apollo
 {
 	public enum Terminals
 	{
-		MissionDirector,
-		CapCom,
+		T1,
+		T2,
+		T3,
+		T4,
+		T5,
+		T6,
 	}
 	public class MissionControl : Singleton<MissionControl>
 	{
@@ -110,8 +114,12 @@ namespace Apollo
 				myFileToTerminals["/" + it.myFile] = it.myTerminal;
 			}
 			myTerminals = null;
-			myTerminalToBuilder[Terminals.CapCom] = new DummyTerminalBuilder();
-			myTerminalToBuilder[Terminals.MissionDirector] = new DummyTerminalBuilder();
+			myTerminalToBuilder[Terminals.T1] = new DummyTerminalBuilder();
+			myTerminalToBuilder[Terminals.T2] = new DummyTerminalBuilder();
+			myTerminalToBuilder[Terminals.T3] = new DummyTerminalBuilder();
+			myTerminalToBuilder[Terminals.T4] = new DummyTerminalBuilder();
+			myTerminalToBuilder[Terminals.T5] = new DummyTerminalBuilder();
+			myTerminalToBuilder[Terminals.T6] = new DummyTerminalBuilder();
 			foreach(var it in myTerminalToBuilder) {
 				it.Value.Init(this);
 			}
@@ -233,7 +241,7 @@ namespace Apollo
 
 		bool FromFileName(string aFile, out Terminals aTerminal) {
 			if(!myFileToTerminals.ContainsKey(aFile)) {
-				aTerminal = Terminals.CapCom;
+				aTerminal = Terminals.T1;
 				return false;
 			}
 			aTerminal = myFileToTerminals[aFile];

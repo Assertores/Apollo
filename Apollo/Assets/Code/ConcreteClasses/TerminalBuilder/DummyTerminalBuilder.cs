@@ -9,17 +9,17 @@ namespace Apollo
 		string myHtmlTemplate;
 
 		public override sealed string GetHtml() {
-			return string.Format(myHtmlTemplate, GameState.s_instance.myValues[(int)ValueType.Altitude].value, GameState.s_instance.myButtons[(int)ButtonType.COM].value);
+			return string.Format(myHtmlTemplate, GameState.s_instance.myValues[(int)ValueType.V1].value, GameState.s_instance.myButtons[(int)ButtonType.B1].value);
 		}
 
 		protected override sealed void OnInit() {
 			myHtmlTemplate = System.IO.File.ReadAllText(Application.streamingAssetsPath + "/CapCom.html");
-			GameState.s_instance.myValues[(int)ValueType.Altitude].OnValueChange += Update;
-			GameState.s_instance.myButtons[(int)ButtonType.COM].OnValueChange += Update;
+			GameState.s_instance.myValues[(int)ValueType.V1].OnValueChange += Update;
+			GameState.s_instance.myButtons[(int)ButtonType.B1].OnValueChange += Update;
 		}
 
 		void Update() {
-			myMissionControl.SendAllUpdate(Terminals.CapCom);
+			myMissionControl.SendAllUpdate(Terminals.T1);
 		}
 	}
 }
