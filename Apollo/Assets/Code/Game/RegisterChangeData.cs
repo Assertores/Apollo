@@ -18,14 +18,8 @@ namespace Apollo
 		void OnDestroy() {
 			if(AstronautInputBus.Exists()) {
 				foreach(var it in myChangeDatas) {
-					AstronautInputBus.s_instance.AddSubscription(it);
+					AstronautInputBus.s_instance.RemoveSubscription(it);
 				}
-			}
-		}
-
-		public void ResetAll() {
-			foreach(var it in myChangeDatas) {
-				it.Stop();
 			}
 		}
 	}
