@@ -22,8 +22,7 @@ namespace Apollo
 				return false;
 			}
 			if(!DataConstraint.IsInConstraint(myConstraint)) {
-				var concreteEvent = Instantiate(myFailerEvent);
-				concreteEvent.OnInstanciation();
+				GameEvent.OnInstanciation(myFailerEvent);
 			}
 			return true;
 		}

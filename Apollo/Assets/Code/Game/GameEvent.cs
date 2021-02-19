@@ -20,6 +20,13 @@ namespace Apollo
 			OnStart();
 		}
 
+		public static void OnInstanciation(GameEvent aEvent) {
+			if(aEvent == null) {
+				return;
+			}
+			Instantiate(aEvent).OnInstanciation();
+		}
+
 		public void OnNewInput(AstronautInput aInput) {
 			if(mySuccess.Action(aInput)) {
 				OnFinished(true);
