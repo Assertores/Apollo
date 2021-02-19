@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de37d7ea0b5f011439a39c994b468a67, type: 3}
-  m_Name: AstronautInput_False
+  m_Name: AstronautInput_Succsed
   m_EditorClassIdentifier: 
-  myFixture: 0
+  myFixture: 1

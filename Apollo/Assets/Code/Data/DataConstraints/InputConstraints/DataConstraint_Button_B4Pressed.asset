@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de37d7ea0b5f011439a39c994b468a67, type: 3}
-  m_Name: AstronautInput_Fail
+  m_Script: {fileID: 11500000, guid: 2137bc00c4c96e04a9bda36ce588af59, type: 3}
+  m_Name: DataConstraint_Button_B4Pressed
   m_EditorClassIdentifier: 
-  myFixture: 0
+  myType: 3
+  myState: 1
