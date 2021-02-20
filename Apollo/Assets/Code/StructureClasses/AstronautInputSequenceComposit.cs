@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
-	[CreateAssetMenu(fileName = "AstronautInputSequenceComposit", menuName = "Game/AstronautInput/SequenceComposit")]
+	[CreateAssetMenu(fileName = "AstronautInput_Sequence_Element", menuName = "Game/AstronautInput/SequenceComposit")]
 	public class AstronautInputSequenceComposit : AstronautInput
 	{
 		[SerializeField] AstronautInput[] mySequence;

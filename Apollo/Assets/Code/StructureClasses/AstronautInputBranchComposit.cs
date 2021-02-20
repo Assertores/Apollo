@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
-	[CreateAssetMenu(fileName = "AstronautInputBranchComposit", menuName = "Game/AstronautInput/BranchComposit")]
+	[CreateAssetMenu(fileName = "AstronautInput_Branch_Element", menuName = "Game/AstronautInput/BranchComposit")]
 	public class AstronautInputBranchComposit : AstronautInput
 	{
 		[SerializeField] AstronautInput[] myBranches;

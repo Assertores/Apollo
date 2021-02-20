@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
-	[CreateAssetMenu(fileName = "DataConstraintBranchComposit", menuName = "Game/DataConstraint/BranchComposit")]
+	[CreateAssetMenu(fileName = "DataConstraint_Branch_Elements", menuName = "Game/DataConstraint/BranchComposit")]
 	public class DataConstraintBranchComposit : DataConstraint
 	{
 		[SerializeField] DataConstraint[] myBranches;
