@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "AstronautInput_Value", menuName = "Game/AstronautInput/Value")]
-	public class ValueAstronautInput : AstronautInputTemplateMethod
+	public sealed class ValueAstronautInput : AstronautInputTemplateMethod
 	{
 		[SerializeField] ValueType myType;
 		[SerializeField] float myValue;

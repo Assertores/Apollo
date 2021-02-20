@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
-	public abstract class DataConstraint : ScriptableObject
+	public abstract class DataConstraint : ScriptableObject, IToHtml
 	{
 		public abstract bool IsInConstraint();
 		public static bool IsInConstraint(DataConstraint aConstraint) {
@@ -13,5 +13,7 @@ namespace Apollo
 			}
 			return aConstraint.IsInConstraint();
 		}
+
+		public abstract string ToHtml();
 	}
 }

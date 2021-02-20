@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "DataStrategy_Value_Change", menuName = "Game/ChangeDataStrategy/ChangeValue")]
-	public class ChangeValueDataStrategy : ChangeDataStrategy
+	public sealed class ChangeValueDataStrategy : ChangeDataStrategy
 	{
 		[SerializeField] ValueType myType;
 		[SerializeField] float myValue;

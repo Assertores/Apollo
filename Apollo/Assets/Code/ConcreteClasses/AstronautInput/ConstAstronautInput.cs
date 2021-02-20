@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "AstronautInput_Const", menuName = "Game/AstronautInput/Const")]
-	public class ConstAstronautInput : AstronautInput
+	public sealed class ConstAstronautInput : AstronautInput
 	{
 		[SerializeField] bool myFixture;
 

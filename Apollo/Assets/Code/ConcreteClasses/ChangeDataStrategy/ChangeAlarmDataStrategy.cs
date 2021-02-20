@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "DataStrategy_Alarm_Change", menuName = "Game/ChangeDataStrategy/ChangeAlarm")]
-	public class ChangeAlarmDataStrategy : ChangeDataStrategy
+	public sealed class ChangeAlarmDataStrategy : ChangeDataStrategy
 	{
 		[SerializeField] AlarmState myNewState;
 

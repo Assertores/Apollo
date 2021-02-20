@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "AstronautInput_Rotator", menuName = "Game/AstronautInput/Rotator")]
-	public class RotatorAstronautInput : AstronautInputTemplateMethod
+	public sealed class RotatorAstronautInput : AstronautInputTemplateMethod
 	{
 		[SerializeField] RotatorTypes myType;
 		[SerializeField] int myValue;

@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
 
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "DataConstraint_Alarm_State", menuName = "Game/DataConstraint/AlarmState")]
-	public class AlarmDataConstraint : DataConstraint
+	public sealed class AlarmDataConstraint : DataConstraint
 	{
 		[SerializeField] AlarmState[] myStates;
 		[SerializeField] bool myNonOfThem = false;
@@ -18,6 +19,24 @@ namespace Apollo
 				}
 			}
 			return myNonOfThem;
+		}
+
+		public override string ToHtml() {
+			var sb = new StringBuilder();
+			sb.Append("Alarm: ");
+			if(myStates.Length > 0) {
+				if(myNonOfThem) {
+					sb.Append("not ");
+				}
+				sb.Append(myStates[0].ToString());
+				for(int i = 1; i < myStates.Length; i++) {
+					sb.Append(", " + myStates[i].ToString());
+				}
+			} else {
+				sb.Append("NONE");
+			}
+			sb.Append(" ");
+			return sb.ToString();
 		}
 	}
 }

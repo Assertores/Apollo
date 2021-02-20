@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
 
 namespace Apollo
 {
@@ -16,6 +17,16 @@ namespace Apollo
 				}
 			}
 			return false;
+		}
+
+		public override string ToHtml() {
+			var sb = new StringBuilder();
+
+			foreach(var it in myBranches) {
+				sb.Append("<div>" + it.ToHtml() + "</div>");
+			}
+
+			return sb.ToString();
 		}
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "AstronautInput_Button", menuName = "Game/AstronautInput/Button")]
-	public class ButtonAstronautInput : AstronautInputTemplateMethod
+	public sealed class ButtonAstronautInput : AstronautInputTemplateMethod
 	{
 		[SerializeField] ButtonType myType;
 		[SerializeField] ButtonState myState;

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "DataConstraint_Rotator_State", menuName = "Game/DataConstraint/RotatorInExagtState")]
-	public class RotatorInExagtStateDataConstraint : DataConstraint
+	public sealed class RotatorInExagtStateDataConstraint : DataConstraint
 	{
 		[SerializeField] RotatorTypes myType;
 		[SerializeField] int myState;
@@ -16,6 +16,10 @@ namespace Apollo
 				return GameState.s_instance.myRotators[(int)myType].value != myState;
 			}
 			return GameState.s_instance.myRotators[(int)myType].value == myState;
+		}
+
+		public override string ToHtml() {
+			return "Rotator " + myType + ": " + (myEverythingButThisState ? "not " : "") + myState + " ";
 		}
 	}
 }
