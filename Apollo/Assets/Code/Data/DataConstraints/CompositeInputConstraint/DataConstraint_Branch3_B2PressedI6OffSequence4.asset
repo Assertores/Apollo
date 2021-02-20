@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8799511fe00a02c428913dce2f8f679d, type: 3}
+  m_Name: DataConstraint_Branch3_B2PressedI6OffSequence4
+  m_EditorClassIdentifier: 
+  myBranches:
+  - {fileID: 11400000, guid: 967b8eca64816e44b9a2171c3e43690c, type: 2}
+  - {fileID: 11400000, guid: 479ae818d6d4b7e4db1c658a5610af1a, type: 2}
+  - {fileID: 11400000, guid: 0fb677f27b0e4cb44a93a8a5aca694e5, type: 2}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8799511fe00a02c428913dce2f8f679d, type: 3}
+  m_Name: DataConstraint_Button2Pressed
+  m_EditorClassIdentifier: 
+  myBranches:
+  - {fileID: 11400000, guid: b0791a8b700b6b24bbb12a476ee2a6ef, type: 2}
+  - {fileID: 11400000, guid: 53fbec0cdb2d4284191100e26f73e282, type: 2}
+  - {fileID: 11400000, guid: 6f99fedbccdaf3c40bde3f7ba640efae, type: 2}

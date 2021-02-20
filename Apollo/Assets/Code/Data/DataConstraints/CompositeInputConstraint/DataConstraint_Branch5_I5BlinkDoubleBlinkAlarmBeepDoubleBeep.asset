@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8799511fe00a02c428913dce2f8f679d, type: 3}
+  m_Name: DataConstraint_Branch5_I5BlinkDoubleBlinkAlarmBeepDoubleBeep
+  m_EditorClassIdentifier: 
+  myBranches:
+  - {fileID: 11400000, guid: 4d3c521b266b52a45917e28aec5dbdba, type: 2}
+  - {fileID: 11400000, guid: 33bc5eda4f831a04ab08850adc01402b, type: 2}

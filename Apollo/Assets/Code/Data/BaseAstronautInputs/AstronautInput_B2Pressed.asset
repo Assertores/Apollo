@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e643f83acc909b94db37a43305a9028f, type: 3}
   m_Name: AstronautInput_B2Pressed
   m_EditorClassIdentifier: 
-  myConstraint: {fileID: 0}
+  myConstraint: {fileID: 11400000, guid: ec1d77e4fd301cf4cb275af19131f3a8, type: 2}
   myFailerEvent: {fileID: 0}
   myType: 1
   myState: 1

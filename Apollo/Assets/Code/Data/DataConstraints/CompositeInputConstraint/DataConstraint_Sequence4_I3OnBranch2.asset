@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e643f83acc909b94db37a43305a9028f, type: 3}
-  m_Name: AstronautInput_B4Pressed
+  m_Script: {fileID: 11500000, guid: 906a5cbc6bb37104ea57c3ab616e48db, type: 3}
+  m_Name: DataConstraint_Sequence4_I3OnBranch2
   m_EditorClassIdentifier: 
-  myConstraint: {fileID: 11400000, guid: 885fb2a1aade18f4c89b8462cf8ab9b2, type: 2}
-  myFailerEvent: {fileID: 0}
-  myType: 3
-  myState: 1
+  mySequence:
+  - {fileID: 11400000, guid: 21f3347d25885ba4d9444f2f5a2d66ef, type: 2}
+  - {fileID: 11400000, guid: de116ba92b2db264789140b3f76eacc5, type: 2}
