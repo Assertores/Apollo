@@ -5,7 +5,38 @@ body {
     background-size: 100% 100%;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid;
+}
+
+.text {
+    display: inline-flex;
+    align-items: center;
+    margin: 0px 3px;
+}
+
 .content {
     padding: 13vh 9.5%;
     color: white;
+}
+
+.element {
+    margin: 3px 0px;
+    border: groove;
+}
+
+.bLine {
+    height: 50%;
+    width: 20px;
+    border-bottom: solid;
+}
+
+.lLine {
+    margin: 3px 0px;
+    border-left: solid;
 }

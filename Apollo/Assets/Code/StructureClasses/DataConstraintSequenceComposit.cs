@@ -22,9 +22,14 @@ namespace Apollo
 		public override string ToHtml() {
 			var sb = new StringBuilder();
 
-			sb.Append("<div style = 'display: flex;'>");
+			sb.Append("<div style='display: flex;'>");
+			bool isFirstElement = true;
 			foreach(var it in mySequence) {
-				sb.Append("<div>" + it.ToHtml() + "</div>");
+				if(!isFirstElement) {
+					sb.Append("<div><div class='bLine'> </div></div>");
+				}
+				isFirstElement = false;
+				sb.Append(it.ToHtml());
 			}
 			sb.Append("</div>");
 

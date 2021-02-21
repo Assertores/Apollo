@@ -5,10 +5,15 @@ using AsserTOOLres;
 
 namespace Apollo
 {
-	public class RegisterChangeData : Singleton<RegisterChangeData>
+	public class RegisterData : Singleton<RegisterData>
 	{
 		[SerializeField] ChangeData[] myChangeDatas;
-		
+		[SerializeField] AstronautInputTemplateMethod[] myAstronautInputs;
+
+		public AstronautInputTemplateMethod[] GetAstronautInputs {
+			get { return myAstronautInputs; } private set { }
+		}
+
 		void Start() {
 			foreach(var it in myChangeDatas) {
 				AstronautInputBus.s_instance.AddSubscription(it);

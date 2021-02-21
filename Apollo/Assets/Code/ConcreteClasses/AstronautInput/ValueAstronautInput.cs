@@ -11,6 +11,10 @@ namespace Apollo
 		[SerializeField] float myValue;
 		[SerializeField] bool myAbsolute = true;
 
+		public override string ToHtml() {
+			return "<div class='text'>" + myType.ToString() + (myAbsolute ? "Abs: " : "Rel: ") + myValue.ToString() + "</div>";
+		}
+
 		public override void UpdateData() {
 			if(myAbsolute) {
 				GameState.s_instance.myValues[(int)myType].value = myValue;

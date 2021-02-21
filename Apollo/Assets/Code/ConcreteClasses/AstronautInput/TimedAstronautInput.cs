@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "AstronautInput_Timed", menuName = "Game/AstronautInput/Timed")]
-	public sealed class TimedAstronautInput : AstronautInput
+	public class TimedAstronautInput : AstronautInput
 	{
 		[SerializeField] float myDelayInSeconds;
 		Coroutine myCoroutine = null;

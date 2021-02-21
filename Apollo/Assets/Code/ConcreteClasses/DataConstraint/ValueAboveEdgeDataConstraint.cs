@@ -15,7 +15,7 @@ namespace Apollo
 		}
 
 		public override string ToHtml() {
-			return myEdge.ToString() + " < " + myType.ToString() + " ";
+			return "<div class='text'>" + myEdge.ToString() + " &lt " + myType.ToString() + "</div>";
 		}
 	}
 }

@@ -115,7 +115,7 @@ namespace Apollo
 			}
 			myTerminals = null;
 			myTerminalToBuilder[Terminals.T1] = new DummyTerminalBuilder();
-			myTerminalToBuilder[Terminals.T2] = new DummyTerminalBuilder();
+			myTerminalToBuilder[Terminals.T2] = new OandPTerminalBuilder();
 			myTerminalToBuilder[Terminals.T3] = new DummyTerminalBuilder();
 			myTerminalToBuilder[Terminals.T4] = new DummyTerminalBuilder();
 			myTerminalToBuilder[Terminals.T5] = new DummyTerminalBuilder();

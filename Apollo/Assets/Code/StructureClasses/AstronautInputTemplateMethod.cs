@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Apollo
 {
-	public abstract class AstronautInputTemplateMethod : AstronautInput
+	public abstract class AstronautInputTemplateMethod : AstronautInput, IToHtml
 	{
 		[SerializeField] DataConstraint myConstraint;
 		[SerializeField] GameEvent myFailerEvent;
@@ -16,6 +16,7 @@ namespace Apollo
 		}
 
 		protected abstract bool AcceptInput(AstronautInput aInput);
+		public abstract string ToHtml();
 
 		public override bool Action(AstronautInput aInput) {
 			if(!AcceptInput(aInput)) {
@@ -25,6 +26,10 @@ namespace Apollo
 				GameEvent.OnInstanciation(myFailerEvent);
 			}
 			return true;
+		}
+
+		public string GetConstraintHtml() {
+			return (myConstraint == null ? "" : myConstraint.ToHtml());
 		}
 	}
 }

@@ -15,7 +15,7 @@ namespace Apollo
 		}
 
 		public override string ToHtml() {
-			return "Button " + myType + ": " + myState + " ";
+			return "<div class='text'>Button " + myType + ": " + myState + "</div>";
 		}
 	}
 }

@@ -23,7 +23,7 @@ namespace Apollo
 
 		public override string ToHtml() {
 			var sb = new StringBuilder();
-			sb.Append("Alarm: ");
+			sb.Append("<div class='text'>Alarm: ");
 			if(myStates.Length > 0) {
 				if(myNonOfThem) {
 					sb.Append("not ");
@@ -35,7 +35,7 @@ namespace Apollo
 			} else {
 				sb.Append("NONE");
 			}
-			sb.Append(" ");
+			sb.Append("</div>");
 			return sb.ToString();
 		}
 	}

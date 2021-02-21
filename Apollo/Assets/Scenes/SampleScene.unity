@@ -556,8 +556,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPort: 2022
   myTerminals:
-  - myTerminal: 1
+  - myTerminal: 0
     myFile: CapCom.html
+  - myTerminal: 1
+    myFile: O&P.html
 --- !u!114 &2090281445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,9 +572,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a3cdb23ee31a74cb29d43558057c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myChangeDatas:
-  - {fileID: 0}
-  - {fileID: 0}
+  myChangeDatas: []
+  myAstronautInputs:
+  - {fileID: 11400000, guid: 74a8dbf6a8a5a1e4992bd1fe76ee7357, type: 2}
+  - {fileID: 11400000, guid: 67496501f724c6448a1fb9c4621d7265, type: 2}
+  - {fileID: 11400000, guid: b5e49321772441948bdc5a4ff1730b90, type: 2}
+  - {fileID: 11400000, guid: ddd9bd85676ca2b4791fe092e88f28a1, type: 2}
+  - {fileID: 11400000, guid: 86c715d6132cd634e8e3150f2ba6e7fe, type: 2}
+  - {fileID: 11400000, guid: 000631304e3f9ec4a9960549d0f48e4c, type: 2}
 --- !u!4 &2090281446
 Transform:
   m_ObjectHideFlags: 0

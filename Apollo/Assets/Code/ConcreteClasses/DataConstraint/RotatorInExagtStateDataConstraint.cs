@@ -19,7 +19,7 @@ namespace Apollo
 		}
 
 		public override string ToHtml() {
-			return "Rotator " + myType + ": " + (myEverythingButThisState ? "not " : "") + myState + " ";
+			return "<div class='text'>Rotator " + myType + ": " + (myEverythingButThisState ? "not " : "") + myState + "</div>";
 		}
 	}
 }
