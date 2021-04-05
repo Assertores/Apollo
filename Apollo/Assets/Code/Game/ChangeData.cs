@@ -7,19 +7,13 @@ namespace Apollo
 	[CreateAssetMenu(fileName = "ChangeData", menuName = "Game/ChangeData")]
 	public class ChangeData : ScriptableObject, IInputSubscription
 	{
-		[SerializeField] DataConstraint myConstraints;
+		[SerializeField] AstronautInput myInputs;
 		[SerializeField] ChangeDataStrategy myStrategy;
-		bool myIsReset = true;
-		
+
 		public void OnNewInput(AstronautInput aInput) {
-			if(!myConstraints.IsInConstraint()) {
-				myIsReset = true;
+			if(!myInputs.ReactToInput(aInput)) {
 				return;
 			}
-			if(!myIsReset) {
-				return;
-			}
-			myIsReset = false;
 			myStrategy.DoChange();
 		}
 	}
