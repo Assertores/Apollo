@@ -9,7 +9,7 @@ namespace Apollo
 	{
 		[SerializeField] bool myFixture;
 
-		public override bool Action(AstronautInput aInput) {
+		public override bool ReactToInput(AstronautInput aInput) {
 			return myFixture;
 		}
 

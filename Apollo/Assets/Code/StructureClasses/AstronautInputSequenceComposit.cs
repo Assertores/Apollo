@@ -10,8 +10,8 @@ namespace Apollo
 		[SerializeField] AstronautInput[] mySequence;
 		int myCurrentIndex = 0;
 
-		public override bool Action(AstronautInput aInput) {
-			if(!mySequence[myCurrentIndex].Action(aInput)) {
+		public override bool ReactToInput(AstronautInput aInput) {
+			if(!mySequence[myCurrentIndex].ReactToInput(aInput)) {
 				return false;
 			}
 			OnStopWait();

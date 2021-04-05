@@ -14,7 +14,7 @@ namespace Apollo
 		protected void OnStart() { }
 		protected void OnEnd() { }
 
-		public override sealed bool Action(AstronautInput aInput) {
+		public override sealed bool ReactToInput(AstronautInput aInput) {
 			return aInput == myInstance;
 		}
 

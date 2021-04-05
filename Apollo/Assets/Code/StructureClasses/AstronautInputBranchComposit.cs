@@ -9,9 +9,9 @@ namespace Apollo
 	{
 		[SerializeField] AstronautInput[] myBranches;
 
-		public override bool Action(AstronautInput aInput) {
+		public override bool ReactToInput(AstronautInput aInput) {
 			foreach(var it in myBranches) {
-				if(it.Action(aInput)) {
+				if(it.ReactToInput(aInput)) {
 					return true;
 				}
 			}

@@ -18,7 +18,7 @@ namespace Apollo
 		protected abstract bool AcceptInput(AstronautInput aInput);
 		public abstract string ToHtml();
 
-		public override bool Action(AstronautInput aInput) {
+		public override bool ReactToInput(AstronautInput aInput) {
 			if(!AcceptInput(aInput)) {
 				return false;
 			}

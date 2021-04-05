@@ -28,11 +28,11 @@ namespace Apollo
 		}
 
 		public void OnNewInput(AstronautInput aInput) {
-			if(mySuccess.Action(aInput)) {
+			if(mySuccess.ReactToInput(aInput)) {
 				OnFinished(true);
 				goto onFinish;
 			}
-			if(myFailiar.Action(aInput)) {
+			if(myFailiar.ReactToInput(aInput)) {
 				OnFinished(false);
 				goto onFinish;
 			}
