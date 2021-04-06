@@ -17,6 +17,9 @@ namespace Apollo
 		public override void OnStopWait() {
 		}
 
+		public override void DoReset() {
+		}
+
 		protected abstract bool AcceptInput(AstronautInput aInput);
 		public abstract string ToHtml();
 

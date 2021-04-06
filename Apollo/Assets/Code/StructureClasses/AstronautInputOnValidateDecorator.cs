@@ -11,33 +11,49 @@ namespace Apollo
 		[SerializeField] AstronautInput myRealInput;
 		[Tooltip("wether or not the funktion call should be delegated to the real thing")]
 		[SerializeField] DataConstraint myValidator;
+		bool myLastValidatorValue;
 
 		public override bool ReactToInput(AstronautInput aInput) {
-			if(!myValidator.IsInConstraint()) {
+			if(!DoValidation()) {
 				return false;
 			}
 			return myRealInput.ReactToInput(aInput);
 		}
 
 		public override void OnStartWait() {
-			if(!myValidator.IsInConstraint()) {
+			if(!DoValidation()) {
 				return;
 			}
 			myRealInput.OnStartWait();
 		}
 
 		public override void OnStopWait() {
-			if(!myValidator.IsInConstraint()) {
+			if(!DoValidation()) {
 				return;
 			}
 			myRealInput.OnStopWait();
 		}
 
 		public override void UpdateData() {
-			if(!myValidator.IsInConstraint()) {
+			if(!DoValidation()) {
 				return;
 			}
 			myRealInput.UpdateData();
+		}
+
+		public override void DoReset() {
+			myRealInput.DoReset();
+		}
+
+		bool DoValidation() {
+			bool validatorValue = myValidator.IsInConstraint();
+
+			if(myLastValidatorValue && !validatorValue) {
+				myRealInput.DoReset();
+			}
+
+			myLastValidatorValue = validatorValue;
+			return validatorValue;
 		}
 	}
 }

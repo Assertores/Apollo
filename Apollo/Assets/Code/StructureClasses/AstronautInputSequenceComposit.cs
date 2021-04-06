@@ -29,11 +29,19 @@ namespace Apollo
 		}
 
 		public override void OnStopWait() {
-			myCurrentIndex = 0;
 			mySequence[myCurrentIndex].OnStopWait();
+			myCurrentIndex = 0;
 		}
 
 		public override void UpdateData() {
+		}
+
+		public override void DoReset() {
+			foreach(var it in mySequence) {
+				it.DoReset();
+			}
+
+			myCurrentIndex = 0;
 		}
 	}
 }

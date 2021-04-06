@@ -33,5 +33,11 @@ namespace Apollo
 
 		public override void UpdateData() {
 		}
+
+		public override void DoReset() {
+			foreach(var it in myBranches) {
+				it.DoReset();
+			}
+		}
 	}
 }

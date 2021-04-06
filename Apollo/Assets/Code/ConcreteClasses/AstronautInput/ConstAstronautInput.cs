@@ -22,5 +22,8 @@ namespace Apollo
 
 		public override void UpdateData() {
 		}
+
+		public override void DoReset() {
+		}
 	}
 }
