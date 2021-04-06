@@ -20,6 +20,8 @@ namespace Apollo
 		T5,
 		T6,
 	}
+
+	// In Desperate Needs of rewriting
 	public class MissionControl : Singleton<MissionControl>
 	{
 		static readonly string LOCALHOST = "http://localhost:";
@@ -95,13 +97,17 @@ namespace Apollo
 			{ ".zip", "application/zip" },
 		};
 
+		[Tooltip("the port over with the terminals can join to the game.")]
 		[SerializeField] int myPort;
 		[System.Serializable]
 		class TerminalDictEntry
 		{
+			[Tooltip("the internals terminal designation")]
 			public Terminals myTerminal;
+			[Tooltip("the coresponding file the user is send")]
 			public string myFile;
 		}
+		[Tooltip("all available terminals for this game")]
 		[SerializeField] List<TerminalDictEntry> myTerminals;
 		Dictionary<string, Terminals> myFileToTerminals = new Dictionary<string, Terminals>();
 		Dictionary<Terminals, TerminalBuilder> myTerminalToBuilder = new Dictionary<Terminals, TerminalBuilder>();

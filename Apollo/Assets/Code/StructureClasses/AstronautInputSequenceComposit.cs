@@ -7,6 +7,7 @@ namespace Apollo
 	[CreateAssetMenu(fileName = "AstronautInput_Sequence_Element", menuName = "Game/AstronautInput/SequenceComposit")]
 	public class AstronautInputSequenceComposit : AstronautInput
 	{
+		[Tooltip("this inputs have to be invoced in sequence. moves on if current returns true. returns true if last element returns true")]
 		[SerializeField] AstronautInput[] mySequence;
 		int myCurrentIndex = 0;
 

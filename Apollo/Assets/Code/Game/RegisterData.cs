@@ -7,7 +7,9 @@ namespace Apollo
 {
 	public class RegisterData : Singleton<RegisterData>
 	{
+		[Tooltip("this are all the ways how the astronaut can change the state of the system")]
 		[SerializeField] ChangeData[] myChangeDatas;
+		[Tooltip("this is to collect all the input conditions to show on one of the the terminals")]
 		[SerializeField] AstronautInputTemplateMethod[] myAstronautInputs;
 
 		public AstronautInputTemplateMethod[] GetAstronautInputs {

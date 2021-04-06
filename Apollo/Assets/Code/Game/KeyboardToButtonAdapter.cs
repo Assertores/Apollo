@@ -6,17 +6,29 @@ namespace Apollo
 {
 	public class KeyboardToButtonAdapter : MonoBehaviour
 	{
+		[Tooltip("the astronaut input invoked if the button 1 is pressed down on the keyboard")]
 		[SerializeField] AstronautInput my1Down;
+		[Tooltip("the astronaut input invoked if the button 1 is released on the keyboard")]
 		[SerializeField] AstronautInput my1Up;
+		[Tooltip("the astronaut input invoked if the button 2 is pressed down on the keyboard")]
 		[SerializeField] AstronautInput my2Down;
+		[Tooltip("the astronaut input invoked if the button 2 is released on the keyboard")]
 		[SerializeField] AstronautInput my2Up;
+		[Tooltip("the astronaut input invoked if the button 3 is pressed down on the keyboard")]
 		[SerializeField] AstronautInput my3Down;
+		[Tooltip("the astronaut input invoked if the button 3 is released on the keyboard")]
 		[SerializeField] AstronautInput my3Up;
+		[Tooltip("the astronaut input invoked if the button 4 is pressed down on the keyboard")]
 		[SerializeField] AstronautInput my4Down;
+		[Tooltip("the astronaut input invoked if the button 4 is released on the keyboard")]
 		[SerializeField] AstronautInput my4Up;
+		[Tooltip("the astronaut input invoked if the button 5 is pressed down on the keyboard")]
 		[SerializeField] AstronautInput my5Down;
+		[Tooltip("the astronaut input invoked if the button 5 is released on the keyboard")]
 		[SerializeField] AstronautInput my5Up;
+		[Tooltip("the astronaut input invoked if the button 6 is pressed down on the keyboard")]
 		[SerializeField] AstronautInput my6Down;
+		[Tooltip("the astronaut input invoked if the button 6 is released on the keyboard")]
 		[SerializeField] AstronautInput my6Up;
 
 

@@ -9,7 +9,9 @@ namespace Apollo
 	public sealed class IndecatorDataConstraint : DataConstraint
 	{
 		[SerializeField] IndecatorType myType;
+		[Tooltip("in with state this constraint is valide")]
 		[SerializeField] IndecatorState[] myStates;
+		[Tooltip("if this bool is set the coresponding indecator is not alowed to be in the states given in the array above")]
 		[SerializeField] bool myNonOfThem = false;
 
 		public override bool IsInConstraint() {

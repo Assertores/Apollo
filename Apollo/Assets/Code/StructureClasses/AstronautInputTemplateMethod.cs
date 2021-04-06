@@ -6,7 +6,9 @@ namespace Apollo
 {
 	public abstract class AstronautInputTemplateMethod : AstronautInput, IToHtml
 	{
+		[Tooltip("the constraint that has to be valide to when this input is invoked")]
 		[SerializeField] DataConstraint myConstraint;
+		[Tooltip("the gameevent that gets instanciated when the constraint was not fullfiled")]
 		[SerializeField] GameEvent myFailerEvent;
 
 		public override void OnStartWait() {

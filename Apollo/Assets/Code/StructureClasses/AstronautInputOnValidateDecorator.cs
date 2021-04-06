@@ -7,7 +7,9 @@ namespace Apollo
 	[CreateAssetMenu(fileName = "AstronautInput_OnValidated_Element", menuName = "Game/AstronautInput/OnValidateDecorator")]
 	public class AstronautInputOnValidateDecorator : AstronautInput
 	{
+		[Tooltip("the actual Input object funktion calls get delegated to if validator succeds")]
 		[SerializeField] AstronautInput myRealInput;
+		[Tooltip("wether or not the funktion call should be delegated to the real thing")]
 		[SerializeField] DataConstraint myValidator;
 
 		public override bool ReactToInput(AstronautInput aInput) {

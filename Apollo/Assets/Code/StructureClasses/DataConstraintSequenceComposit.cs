@@ -8,6 +8,7 @@ namespace Apollo
 	[CreateAssetMenu(fileName = "DataConstraint_Sequence_Elements", menuName = "Game/DataConstraint/SequenceComposit")]
 	public class DataConstraintSequenceComposit : DataConstraint
 	{
+		[Tooltip("all subelements have to return true for this element to return true")]
 		[SerializeField] DataConstraint[] mySequence;
 
 		public override bool IsInConstraint() {

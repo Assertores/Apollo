@@ -9,6 +9,7 @@ namespace Apollo
 	{
 		[SerializeField] ValueType myType;
 		[SerializeField] float myValue;
+		[Tooltip("wether or not the value is a absolut value or a relative one")]
 		[SerializeField] bool myAbsolute = true;
 
 		public override string ToHtml() {

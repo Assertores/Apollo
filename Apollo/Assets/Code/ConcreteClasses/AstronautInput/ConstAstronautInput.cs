@@ -7,6 +7,7 @@ namespace Apollo
 	[CreateAssetMenu(fileName = "AstronautInput_Const", menuName = "Game/AstronautInput/Const")]
 	public sealed class ConstAstronautInput : AstronautInput
 	{
+		[Tooltip("the constant value it should return")]
 		[SerializeField] bool myFixture;
 
 		public override bool ReactToInput(AstronautInput aInput) {

@@ -8,6 +8,7 @@ namespace Apollo
 	[CreateAssetMenu(fileName = "DataConstraint_Branch_Elements", menuName = "Game/DataConstraint/BranchComposit")]
 	public class DataConstraintBranchComposit : DataConstraint
 	{
+		[Tooltip("eather one of the branches have to return true for this to return true")]
 		[SerializeField] DataConstraint[] myBranches;
 
 		public override bool IsInConstraint() {

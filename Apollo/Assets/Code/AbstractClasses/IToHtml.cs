@@ -6,6 +6,6 @@ namespace Apollo
 {
 	public interface IToHtml
 	{
-		string ToHtml();
+		string ToHtml(); // is used to display this constraint to the terminal
 	}
 }
