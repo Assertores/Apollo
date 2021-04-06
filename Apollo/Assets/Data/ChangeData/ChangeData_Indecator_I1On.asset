@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d38fabea0b50c43abc9aab552d8433, type: 3}
+  m_Name: ChangeData_Indecator_I1On
+  m_EditorClassIdentifier: 
+  myInputs: {fileID: 11400000, guid: 74a8dbf6a8a5a1e4992bd1fe76ee7357, type: 2}
+  myStrategy: {fileID: 11400000, guid: 8c99ccf0b03b1b44a800c22e1c27d5d5, type: 2}

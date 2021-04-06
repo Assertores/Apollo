@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5498f024af53c041ab0bc90baf1fdce, type: 3}
+  m_Name: DataStrategy_Indecator_I1I2Off
+  m_EditorClassIdentifier: 
+  myStrategys:
+  - {fileID: 11400000, guid: 0c235e78cb1c94e44afe6087ba9e6f74, type: 2}
+  - {fileID: 11400000, guid: aa0756e00f399bb4cacaeb69c6209ac2, type: 2}

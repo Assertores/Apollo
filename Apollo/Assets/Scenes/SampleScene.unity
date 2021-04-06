@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 2090281445}
   - component: {fileID: 2090281444}
   - component: {fileID: 2090281447}
+  - component: {fileID: 2090281448}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -572,8 +573,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a3cdb23ee31a74cb29d43558057c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myChangeDatas: []
-  myAstronautInputs: []
+  myChangeDatas:
+  - {fileID: 11400000, guid: 0b1a5ea20e8f1364190c3507f0439e78, type: 2}
+  - {fileID: 11400000, guid: cf73097b5c99fbc4f91caed2c8f3a0bc, type: 2}
+  - {fileID: 11400000, guid: 6737377a19f44a44db379e9274b48b1c, type: 2}
+  myAstronautInputs:
+  - {fileID: 11400000, guid: bc4588ee0d930db42a01b631cb43effb, type: 2}
+  - {fileID: 11400000, guid: 3c29d44d9fbf09343ad291d29e51657a, type: 2}
 --- !u!4 &2090281446
 Transform:
   m_ObjectHideFlags: 0
@@ -604,11 +610,24 @@ MonoBehaviour:
   my1Up: {fileID: 11400000, guid: f25ebb0a234d3ff45980d8126044070f, type: 2}
   my2Down: {fileID: 0}
   my2Up: {fileID: 11400000, guid: 4162c6799d54ec445ba04ec85f61e509, type: 2}
-  my3Down: {fileID: 0}
+  my3Down: {fileID: 11400000, guid: bc4588ee0d930db42a01b631cb43effb, type: 2}
   my3Up: {fileID: 0}
-  my4Down: {fileID: 0}
+  my4Down: {fileID: 11400000, guid: 3c29d44d9fbf09343ad291d29e51657a, type: 2}
   my4Up: {fileID: 0}
   my5Down: {fileID: 0}
   my5Up: {fileID: 0}
   my6Down: {fileID: 0}
   my6Up: {fileID: 0}
+--- !u!114 &2090281448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090281443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff09c24eed21494f8bbb531ca8dfc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myEvent: {fileID: 11400000, guid: 1bb8717500d745944a14997d961f52b4, type: 2}
