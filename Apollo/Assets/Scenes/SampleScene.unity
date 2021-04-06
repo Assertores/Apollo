@@ -573,13 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myChangeDatas: []
-  myAstronautInputs:
-  - {fileID: 11400000, guid: 74a8dbf6a8a5a1e4992bd1fe76ee7357, type: 2}
-  - {fileID: 11400000, guid: 67496501f724c6448a1fb9c4621d7265, type: 2}
-  - {fileID: 11400000, guid: b5e49321772441948bdc5a4ff1730b90, type: 2}
-  - {fileID: 11400000, guid: ddd9bd85676ca2b4791fe092e88f28a1, type: 2}
-  - {fileID: 11400000, guid: 86c715d6132cd634e8e3150f2ba6e7fe, type: 2}
-  - {fileID: 11400000, guid: 000631304e3f9ec4a9960549d0f48e4c, type: 2}
+  myAstronautInputs: []
 --- !u!4 &2090281446
 Transform:
   m_ObjectHideFlags: 0
@@ -608,13 +602,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   my1Down: {fileID: 11400000, guid: 74a8dbf6a8a5a1e4992bd1fe76ee7357, type: 2}
   my1Up: {fileID: 11400000, guid: f25ebb0a234d3ff45980d8126044070f, type: 2}
-  my2Down: {fileID: 11400000, guid: 67496501f724c6448a1fb9c4621d7265, type: 2}
+  my2Down: {fileID: 0}
   my2Up: {fileID: 11400000, guid: 4162c6799d54ec445ba04ec85f61e509, type: 2}
-  my3Down: {fileID: 11400000, guid: b5e49321772441948bdc5a4ff1730b90, type: 2}
-  my3Up: {fileID: 11400000, guid: 19ba3efd38a126e45a817527d49008dd, type: 2}
-  my4Down: {fileID: 11400000, guid: ddd9bd85676ca2b4791fe092e88f28a1, type: 2}
-  my4Up: {fileID: 11400000, guid: 0a10feb9e508b2648827ff9ec449651a, type: 2}
-  my5Down: {fileID: 11400000, guid: 86c715d6132cd634e8e3150f2ba6e7fe, type: 2}
-  my5Up: {fileID: 11400000, guid: b09b1606233352446b5b895f4a8ae644, type: 2}
-  my6Down: {fileID: 11400000, guid: 000631304e3f9ec4a9960549d0f48e4c, type: 2}
-  my6Up: {fileID: 11400000, guid: 59fbb4cc100920e4492e432db0fe851d, type: 2}
+  my3Down: {fileID: 0}
+  my3Up: {fileID: 0}
+  my4Down: {fileID: 0}
+  my4Up: {fileID: 0}
+  my5Down: {fileID: 0}
+  my5Up: {fileID: 0}
+  my6Down: {fileID: 0}
+  my6Up: {fileID: 0}
