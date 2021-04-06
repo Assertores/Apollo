@@ -6,7 +6,9 @@ namespace Apollo
 {
 	public abstract class GameEvent : ScriptableObject, IInputSubscription
 	{
+		[Tooltip("what to do to succeed the event")]
 		[SerializeField] AstronautInput mySuccess;
+		[Tooltip("what to do to fail the event")]
 		[SerializeField] AstronautInput myFailiar;
 
 		protected abstract void OnStart();
@@ -14,7 +16,7 @@ namespace Apollo
 
 		public void OnInstanciation() {
 			mySuccess.OnStartWait();
-			myFailiar.OnStartWait();
+			myFailiar?.OnStartWait();
 
 			AstronautInputBus.s_instance.AddSubscription(this);
 			OnStart();
@@ -32,7 +34,7 @@ namespace Apollo
 				OnFinished(true);
 				goto onFinish;
 			}
-			if(myFailiar.ReactToInput(aInput)) {
+			if(myFailiar && myFailiar.ReactToInput(aInput)) {
 				OnFinished(false);
 				goto onFinish;
 			}
@@ -40,7 +42,7 @@ namespace Apollo
 onFinish:
 			AstronautInputBus.s_instance.RemoveSubscription(this);
 			mySuccess.OnStopWait();
-			myFailiar.OnStopWait();
+			myFailiar?.OnStopWait();
 			Destroy(this);
 		}
 	}

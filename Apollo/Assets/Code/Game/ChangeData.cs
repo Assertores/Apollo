@@ -15,6 +15,7 @@ namespace Apollo
 				return;
 			}
 			myStrategy.DoChange();
+			myInputs.DoReset();
 		}
 	}
 }

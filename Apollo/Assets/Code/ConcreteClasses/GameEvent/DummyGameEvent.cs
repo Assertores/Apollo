@@ -8,10 +8,11 @@ namespace Apollo
 	public class DummyGameEvent : GameEvent
 	{
 		protected override void OnFinished(bool aSuccessfull) {
-			Debug.Log("you where " + (aSuccessfull ? "" : "not ") + "Successfull");
+			Debug.Log("you where " + (aSuccessfull ? "" : "not ") + "Successfull for event " + name);
 		}
 
 		protected override void OnStart() {
+			Debug.Log("GameEvent " + name + "has started");
 		}
 	}
 }
