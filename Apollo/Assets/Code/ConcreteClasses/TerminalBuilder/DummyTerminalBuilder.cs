@@ -7,6 +7,7 @@ namespace Apollo
 	public class DummyTerminalBuilder : TerminalBuilder
 	{
 		string myHtmlTemplate;
+		Coroutine myCurrentCoroutine = null;
 
 		public override sealed string GetHtml() {
 			return string.Format(myHtmlTemplate,
@@ -32,6 +33,15 @@ namespace Apollo
 		}
 
 		void Update() {
+			if(myCurrentCoroutine != null) {
+				CorountineHolder.s_instance.StopCoroutine(myCurrentCoroutine);
+			}
+			myCurrentCoroutine = CorountineHolder.s_instance.StartCoroutine(SendDelayedUpdate());
+		}
+
+		// NOTE(andreas): bundles multiple changes in one frame together
+		IEnumerator SendDelayedUpdate() {
+			yield return new WaitForEndOfFrame();
 			myMissionControl.SendAllUpdate(Terminals.T1);
 		}
 	}
