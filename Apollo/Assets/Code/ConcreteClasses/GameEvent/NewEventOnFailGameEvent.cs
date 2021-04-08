@@ -7,23 +7,23 @@ namespace Apollo
 	public class NewEventOnFailGameEvent : GameEvent
 	{
 		[Tooltip("the way this game event makes it self known to the players")]
-		[SerializeField] ChangeDataStrategy myStartDataChange;
+		[SerializeField] Command myStartDataChange;
 		[Tooltip("the effect this event has on the system if it succeads")]
-		[SerializeField] ChangeDataStrategy mySuccessDataChange;
+		[SerializeField] Command mySuccessDataChange;
 		[Tooltip("the effect this event has on the system if it fails")]
-		[SerializeField] ChangeDataStrategy myFailiarDataChange;
+		[SerializeField] Command myFailiarDataChange;
 		[Tooltip("gets triggered if this event failes")]
 		[SerializeField] GameEvent myFailiarEvent;
 
 		protected override void OnStart() {
-			myStartDataChange?.DoChange();
+			myStartDataChange?.Execute();
 		}
 
 		protected override void OnFinished(bool aSuccessfull) {
 			if(aSuccessfull) {
-				myStartDataChange?.DoChange();
+				myStartDataChange?.Execute();
 			} else {
-				myFailiarDataChange?.DoChange();
+				myFailiarDataChange?.Execute();
 				OnInstanciation(myFailiarEvent);
 			}
 		}

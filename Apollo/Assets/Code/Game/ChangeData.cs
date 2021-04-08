@@ -8,13 +8,13 @@ namespace Apollo
 	public class ChangeData : ScriptableObject, IInputSubscription
 	{
 		[SerializeField] AstronautInput myInputs;
-		[SerializeField] ChangeDataStrategy myStrategy;
+		[SerializeField] Command myStrategy;
 
 		public void OnNewInput(AstronautInput aInput) {
 			if(!myInputs.ReactToInput(aInput)) {
 				return;
 			}
-			myStrategy.DoChange();
+			myStrategy.Execute();
 			myInputs.DoReset();
 		}
 	}

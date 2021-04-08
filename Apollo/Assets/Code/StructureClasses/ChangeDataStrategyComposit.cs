@@ -5,14 +5,14 @@ using UnityEngine;
 namespace Apollo
 {
 	[CreateAssetMenu(fileName = "DataStrategy_Composit", menuName = "Game/ChangeDataStrategy/Composit")]
-	public class ChangeDataStrategyComposit : ChangeDataStrategy
+	public class ChangeDataStrategyComposit : Command
 	{
 		[Tooltip("redestributes call to all subelements to change multiple states at once")]
-		[SerializeField] ChangeDataStrategy[] myStrategys;
+		[SerializeField] Command[] myStrategys;
 
-		public override void DoChange() {
+		public override void Execute() {
 			foreach(var it in myStrategys) {
-				it.DoChange();
+				it.Execute();
 			}
 		}
 	}
