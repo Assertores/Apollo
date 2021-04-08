@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3375939694900090602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3375939694900090600}
+  - component: {fileID: 3375939694900090601}
+  - component: {fileID: 301019206283763970}
+  m_Layer: 0
+  m_Name: Logic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3375939694900090600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375939694900090602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.146, y: 1.0631248, z: 0.4726214}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3375939694900090601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375939694900090602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a3cdb23ee31a74cb29d43558057c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myChangeDatas:
+  - {fileID: 11400000, guid: 0b1a5ea20e8f1364190c3507f0439e78, type: 2}
+  - {fileID: 11400000, guid: cf73097b5c99fbc4f91caed2c8f3a0bc, type: 2}
+  - {fileID: 11400000, guid: 6737377a19f44a44db379e9274b48b1c, type: 2}
+  myAstronautInputs:
+  - {fileID: 11400000, guid: bc4588ee0d930db42a01b631cb43effb, type: 2}
+  - {fileID: 11400000, guid: 3c29d44d9fbf09343ad291d29e51657a, type: 2}
+--- !u!114 &301019206283763970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375939694900090602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63cd775b1bac744a83de0d3f09453a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPort: 2022
+  myTerminals:
+  - myTerminal: 0
+    myFile: CapCom.html
+  - myTerminal: 1
+    myFile: O&P.html
